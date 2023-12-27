@@ -21,20 +21,166 @@ liRecipes.onclick = function () {
   ingredContent.style.display = "none";
 };
 
-const ingredientsArray = ["chleb", "maslo", "dzem", "cebula", "ogorek"];
+const ingredientsArray = [
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+  "chleb",
+  "maslo",
+  "dzem",
+  "cebula",
+  "ogorek",
+];
 
 ingredientsArray.forEach((ingredient) => {
   const ingredContainer = document.createElement("div");
+  const ingredButtonContainer = document.createElement("div");
   const ingredItemName = document.createElement("span");
   ingredItemName.innerText = ingredient;
-  const ingredEditButton = document.createElement("button");
-  const ingredDeleteButton = document.createElement("button");
+  const ingredEditButton = document.createElement("i");
+  const ingredDeleteButton = document.createElement("i");
   ingredContainer.appendChild(ingredItemName);
-  ingredContainer.appendChild(ingredEditButton);
-  ingredContainer.appendChild(ingredDeleteButton);
+  ingredButtonContainer.appendChild(ingredEditButton);
+  ingredButtonContainer.appendChild(ingredDeleteButton);
+  ingredContainer.appendChild(ingredButtonContainer);
   ingredItemName.className = "ingred-name";
-  ingredEditButton.className = "ingred-edit-button";
-  ingredDeleteButton.className = "ingred-delete-button";
+  ingredEditButton.className = "fa-solid fa-pen-to-square";
+  ingredDeleteButton.className = "fa-solid fa-trash";
   ingredContainer.className = "ingred-container";
+  ingredButtonContainer.className = "ingred-button-container";
   ingredContent.appendChild(ingredContainer);
+});
+
+const recipesArray = [
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "kanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+  "kanapka podstawowa",
+  "kanapka z tunczykiem",
+  "dzemkanapka z dzemem",
+  "kanapka z cebula",
+  "kanapka z chlebem",
+];
+
+recipesArray.forEach((recipe) => {
+  const recipeContainer = document.createElement("div");
+  const recipeButtonContainer = document.createElement("div");
+  const recipeItemName = document.createElement("span");
+  recipeItemName.innerText = recipe;
+  const recipeEditButton = document.createElement("i");
+  const recipeDeleteButton = document.createElement("i");
+  recipeContainer.appendChild(recipeItemName);
+  recipeButtonContainer.appendChild(recipeEditButton);
+  recipeButtonContainer.appendChild(recipeDeleteButton);
+  recipeContainer.appendChild(recipeButtonContainer);
+  recipeEditButton.className = "fa-solid fa-pen-to-square";
+  recipeItemName.className = "recipe-name";
+  recipeDeleteButton.className = "fa-solid fa-trash";
+  recipeContainer.className = "recipe-container";
+  recipeButtonContainer.className = "recpie-button-container";
+  recipesContent.appendChild(recipeContainer);
 });

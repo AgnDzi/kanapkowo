@@ -10,10 +10,13 @@ body {
 }
 
 .nav-bar {
-  background-color: blueviolet;
+  background-color: bisque;
   display: flex;
   justify-content: space-between;
   height: 2rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
 }
 
 .container {
@@ -22,13 +25,18 @@ body {
 }
 
 .left-menu {
-  background-color: aqua;
+  background-color: rgb(79, 39, 39);
   flex: 1;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-weight: bold;
 }
 
 .right-content {
-  background-color: bisque;
+  background-color: white;
   flex: 4;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .ul-menu {
@@ -50,14 +58,15 @@ body {
 .recipes-content {
   background-color: bisque;
   flex: 4;
+  flex-direction: column;
 }
 
 .ingred-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: green;
-  padding: 0 1.5rem;
+  background-color: white;
+  padding: 1rem 1.5rem;
   gap: 1rem;
 }
 
@@ -68,4 +77,34 @@ body {
 }
 
 .ingred-delete-button {
+}
+
+.ingred-button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.recipe-name {
+}
+
+.recipe-edit-button {
+}
+
+.recipe-delete-button {
+}
+
+.recipe-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+}
+
+.recpie-button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
