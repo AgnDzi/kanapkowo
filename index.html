@@ -17,7 +17,7 @@
         <div class="nav-bar-ele2">User (cook)</div>
       </div>
       <div class="container">
-        <div class="left-menu">
+        <div class="left-menu" id="leftMenu">
           MENU
           <ul class="ul-menu">
             <li class="li-menu" id="li-ingred">Ingredients</li>
@@ -27,6 +27,40 @@
         <div class="right-content" id="rightContent">dlaD;asdoasDOJP</div>
         <div class="ingredients-content" id="ingredContent"></div>
         <div class="recipes-content" id="recipesContent"></div>
+        <div class="loginForm" id="loginForm">
+          <form onsubmit="return handleSubmit(event)">
+           
+            <label for="loginName">Login: </label>
+            <input type="text" name="loginName" required>
+            <br><br>
+            <label for="password">Password: </label>
+            <input type="password" name="password" required>
+            <br><br>
+            <input type="submit" value="LogIn">
+            <br><br>
+            <p class="pLogin" id="pLogin"></p>
+          </form>
+        </div>
+        <div class="productList" id="productList">
+          lista produktow 
+        </div>
+        <!-- <div class="registerForm" id="registerForm">
+          <label for="loginName"> Login: </label>
+            <input type="text" name="loginName" required>
+            <br><br> -->
+            <!-- tutaj obsluzyc czy juz jest czy nie ma tego loginu -->
+            <!-- <label for="password">Password: </label>
+            <input type="password" name="password" required>
+            <br><br>
+            <label for="passwordConfirm">Password confirm: </label>
+            <input type="password" name="passwordConfirm" required>
+            <br><br> -->
+            <!-- porownanie hasel -->
+            <!-- <input type="submit" value="LogIn">
+            <br><br>
+            <p class="pLogin" id="pLogin"></p>
+
+        </div> -->
       </div>
     </div>
 
