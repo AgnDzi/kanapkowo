@@ -23,21 +23,33 @@ productListContent.style.display = "none";
 
 const liIngred = document.getElementById("li-ingred");
 liIngred.onclick = function () {
-  ingredContent.style.display = "flex";
-  rightContent.style.display = "none";
-  recipesContent.style.display = "none";
-  leftMenu.style.display = "block";
-  loginForm.style.display = "none";
+  toggleViewVisibility(true);
 };
 
 const liRecipes = document.getElementById("li-recipes");
 liRecipes.onclick = function () {
-  recipesContent.style.display = "flex";
-  rightContent.style.display = "none";
-  ingredContent.style.display = "none";
+  toggleViewVisibility(false);
+};
+
+//przebudowa ONCLICKA:
+const toggleViewVisibility = (isVisible) => {
   leftMenu.style.display = "block";
   loginForm.style.display = "none";
+  rightContent.style.display = "none";
+  if (isVisible) {
+    ingredContent.style.display = "flex";
+    recipesContent.style.display = "none";
+  } else {
+    ingredContent.style.display = "none";
+    recipesContent.style.display = "flex";
+  }
 };
+
+//
+//
+//
+//
+//
 
 // const funckja_zewnentrzna = () => {
 //   const imie = "Aga";
