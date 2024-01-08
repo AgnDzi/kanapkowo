@@ -3,7 +3,7 @@
 //   productsArray = productsArray.filter((elem) => elem.id !== id);
 //   createProductsView();
 // };
-
+// test 2
 let productsArray = [
   {
     name: "kanapka1",

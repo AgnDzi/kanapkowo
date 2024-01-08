@@ -1,4 +1,5 @@
 //wybodwanie widokow
+// test 3
 const clickRecipeHandler = (event) => {
   const id = Number.parseInt(event.target.dataset.recipeId);
   // robie sobie console.dir i wtedy obczajam co to tam mam - jest dataset ale tam wszystko jest typu string wiec trzeba to przeparsowac na Int
