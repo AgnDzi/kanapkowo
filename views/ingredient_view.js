@@ -7,6 +7,15 @@ const clickIngredHandler = (event) => {
   createIngredView();
 };
 
+const clickIngredEditButton = (event) => {
+  const idIngred = Number.parseInt(event.target.dataset.ingredientId);
+  const input = document.querySelector(
+    `[data-ingredient-id-input="${idIngred}"]`
+  );
+  input.disabled = false;
+  input.focus();
+};
+
 let ingredientsArray = [
   { name: "chleb", id: 1 },
   { name: "maslo", id: 2 },
@@ -24,14 +33,26 @@ let ingredientsArray = [
   { name: "majonez", id: 71 },
 ];
 
+const updateIngredName = (event) => {
+  const idIngred = Number.parseInt(event.target.dataset.ingredientIdInput);
+  const ingredName = event.target.value;
+  ingredientsArray = ingredientsArray.map((elem) => {
+    if (elem.id == idIngred) {
+      elem.name = ingredName;
+    }
+    return elem;
+  });
+  console.log(ingredientsArray);
+};
+
 const markup = (ingrds) =>
   ingrds
     .map((ingr) => {
       return `
     <div class="ingred-container">
-      <span class="ingred-name"> ${ingr.name}</span>
+      <input class="ingred-name" type="text" value=${ingr.name} data-ingredient-id-input=${ingr.id} onblur="return updateIngredName(event)" disabled></input>
       <div class="ingred-button-container">
-        <i class="fa-solid fa-pen-to-square"></i>
+        <i data-ingredient-id=${ingr.id} class="fa-solid fa-pen-to-square" onclick="return clickIngredEditButton(event)"></i>
         <i data-ingredient-id=${ingr.id} class="fa-solid fa-trash" onclick="return clickIngredHandler(event)"></i>
       </div>
     </div>`;
