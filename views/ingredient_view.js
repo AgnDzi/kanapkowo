@@ -1,20 +1,21 @@
+import { ingredientsContainer } from "../index.js";
+
 //wybudowanie widkow
 
-const clickIngredHandler = (event) => {
-  console.log("krok1");
-  const id = Number.parseInt(event.target.dataset.ingredientId);
-  ingredientsArray = ingredientsArray.filter((elem) => elem.id !== id);
-  createIngredView();
-};
-
-const clickIngredEditButton = (event) => {
-  const idIngred = Number.parseInt(event.target.dataset.ingredientId);
-  const input = document.querySelector(
-    `[data-ingredient-id-input="${idIngred}"]`
-  );
-  input.disabled = false;
-  input.focus();
-};
+const ingredientComponent = (ingredients) =>
+  ingredients
+    .map((ingredient) => {
+      return `
+        <div data-ingredient-id=${ingredient.id} class="ingred-container">
+          <input class="ingred-name" type="text" value=${ingredient.name} onblur="updateIngredientName(${ingredient.id})" disabled />
+          <div class="ingred-button-container">
+            <i class="fa-solid fa-pen-to-square" onclick="onEditButtonClick(${ingredient.id})"></i>
+            <i class="fa-solid fa-trash" onclick="onDeleteButtonClick(${ingredient.id})"></i>
+          </div>
+          </div>
+          `;
+    })
+    .join("");
 
 let ingredientsArray = [
   { name: "chleb", id: 1 },
@@ -33,37 +34,45 @@ let ingredientsArray = [
   { name: "majonez", id: 71 },
 ];
 
-const updateIngredName = (event) => {
-  const idIngred = Number.parseInt(event.target.dataset.ingredientIdInput);
-  const ingredName = event.target.value;
+const onDeleteButtonClick = (ingredientId) => {
+  ingredientsArray = ingredientsArray.filter(
+    (elem) => elem.id !== ingredientId
+  );
+  createIngredientView();
+};
+
+const onEditButtonClick = (ingredientId) => {
+  const component = document.querySelector(
+    `[data-ingredient-id="${ingredientId}"]`
+  );
+  const input = component.querySelector("input");
+  input.disabled = false;
+  input.focus();
+};
+
+const updateIngredientName = (ingredientId) => {
+  const component = document.querySelector(
+    `[data-ingredient-id="${ingredientId}"]`
+  );
+  const input = component.querySelector("input");
+  const ingredientName = input.value;
+
   ingredientsArray = ingredientsArray.map((elem) => {
-    if (elem.id == idIngred) {
-      elem.name = ingredName;
+    if (elem.id == ingredientId) {
+      elem.name = ingredientName;
     }
     return elem;
   });
   console.log(ingredientsArray);
+  input.disabled = true;
 };
 
-const markup = (ingrds) =>
-  ingrds
-    .map((ingr) => {
-      return `
-    <div class="ingred-container">
-      <input class="ingred-name" type="text" value=${ingr.name} data-ingredient-id-input=${ingr.id} onblur="return updateIngredName(event)" disabled></input>
-      <div class="ingred-button-container">
-        <i data-ingredient-id=${ingr.id} class="fa-solid fa-pen-to-square" onclick="return clickIngredEditButton(event)"></i>
-        <i data-ingredient-id=${ingr.id} class="fa-solid fa-trash" onclick="return clickIngredHandler(event)"></i>
-      </div>
-    </div>`;
-    })
-    .join("");
-
-const createIngredView = () => {
-  ingredContent.innerHTML = "";
-  ingredContent.innerHTML = markup(ingredientsArray);
+const createIngredientView = () => {
+  ingredientsContainer.innerHTML = "";
+  ingredientsContainer.innerHTML = ingredientComponent(ingredientsArray);
 };
-createIngredView();
+
+createIngredientView();
 
 //ingredDeleteButton.onclick = function (event) {
 //przegladarka robi obsluge tego zdarzenia to automagicznie mi przekazuje ten event

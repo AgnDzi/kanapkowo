@@ -3,8 +3,8 @@
 
 const loginFailedMsg = document.getElementById("pLogin");
 
-const ingredContent = document.getElementById("ingredContent");
-ingredContent.style.display = "none";
+export const ingredientsContainer = document.getElementById("ingredContent");
+ingredientsContainer.style.display = "none";
 
 const recipesContent = document.getElementById("recipesContent");
 recipesContent.style.display = "none";
@@ -18,7 +18,7 @@ rightContent.style.display = "none";
 const leftMenu = document.getElementById("leftMenu");
 leftMenu.style.display = "none";
 
-const productListContent = document.getElementById("productList");
+export const productListContent = document.getElementById("productList");
 productListContent.style.display = "none";
 
 const liIngred = document.getElementById("li-ingred");
@@ -37,10 +37,10 @@ const toggleViewVisibility = (isVisible) => {
   loginForm.style.display = "none";
   rightContent.style.display = "none";
   if (isVisible) {
-    ingredContent.style.display = "flex";
+    ingredientsContainer.style.display = "flex";
     recipesContent.style.display = "none";
   } else {
-    ingredContent.style.display = "none";
+    ingredientsContainer.style.display = "none";
     recipesContent.style.display = "flex";
   }
 };

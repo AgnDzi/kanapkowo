@@ -1,3 +1,5 @@
+import { productListContent } from "../index.js";
+
 // const clickProdHandler = (event) => {
 //   const id = Number.parseInt(event.target.dataset.prodId);
 //   productsArray = productsArray.filter((elem) => elem.id !== id);
@@ -8,13 +10,13 @@ let productsArray = [
   {
     name: "kanapka1",
     composition: "chleb,slonina,dzem",
-    photo: "https://i.imgur.com/6jaCHNT.jpeg",
+    photo: "", //"https://i.imgur.com/6jaCHNT.jpeg",
     id: 1,
   },
   {
     name: "kanapka2",
     composition: "chleb,slonina,dzem",
-    photo: "https://i.imgur.com/eFX0GFp.jpeg",
+    photo: "", //"https://i.imgur.com/eFX0GFp.jpeg",
     id: 2,
   },
 ];
